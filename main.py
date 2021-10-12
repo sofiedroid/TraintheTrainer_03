@@ -7,6 +7,10 @@ import pandas as pd
 
 df = pd.read_csv(r"C:\Users\teugelso\PycharmProjects\pythonProject\TraintheTrainer_03\ttt3.csv", delimiter=';')
 print(df)
+# read kolomnamen
+#print(df.columns)
+# read 1 kolom
+#print(df['objectnaam'])
 # om dataframe te bekijken, laat bovenstaande lopen in python console ipv terminal en klik op 'view as dataframe'
 
 #######################################################################################################################
