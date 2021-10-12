@@ -46,9 +46,13 @@ print(cols)
 
 #######################################################################################################################
 
-# 5. sorteren
+# 5. alfabetisch/numeriek sorteren
 
+df = df.sort_values('objectnaam', #ascending=False)
+print(df)
 
+#df5 = df.sort_values(['vervaardiger', 'objectnaam'], ascending=[1,0])
+#print(df5)
 
 #######################################################################################################################
 
