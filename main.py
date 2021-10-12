@@ -5,7 +5,7 @@
 import pandas as pd
 # pip install pandas in terminal
 
-df = pd.read_csv(r"C:\Users\Verkesfl\Documents\Documenten\ttt3.csv", delimiter=';')
+df = pd.read_csv(r"C:\Users\teugelso\PycharmProjects\pythonProject\TraintheTrainer_03\ttt3.csv", delimiter=';')
 print(df)
 # om dataframe te bekijken, laat bovenstaande lopen in python console ipv terminal en klik op 'view as dataframe'
 
