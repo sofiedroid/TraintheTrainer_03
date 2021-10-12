@@ -7,10 +7,22 @@ import pandas as pd
 
 df = pd.read_csv(r"C:\Users\teugelso\PycharmProjects\pythonProject\TraintheTrainer_03\ttt3.csv", delimiter=';')
 print(df)
+
 # read kolomnamen
 #print(df.columns)
+
 # read 1 kolom
-#print(df['objectnaam'])
+#print(df['objectnaam'][0:5])
+
+# read meerdere kolommen
+#print(df[['objectnaam', 'vervaardiger']])
+
+# read 1 of meer rij(en)
+#print(df.iloc[1:4])
+
+# read een specifieke locatie
+#print(df.iloc[1,1])
+
 # om dataframe te bekijken, laat bovenstaande lopen in python console ipv terminal en klik op 'view as dataframe'
 
 #######################################################################################################################
@@ -57,6 +69,9 @@ print(df)
 
 #df5 = df.sort_values(['vervaardiger', 'objectnaam'], ascending=[1,0])
 #print(df5)
+
+#df6 = df.sort_values('objectnummer')
+#print(df6)
 
 #######################################################################################################################
 
