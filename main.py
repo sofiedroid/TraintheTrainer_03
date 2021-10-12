@@ -13,28 +13,28 @@ print(df)
 
 # transformaties van de dataframe
 
-# 1. wijzigen naam kolom
+# 1. wijzigen kolomnaam
 
 df = df.rename(columns={"instelling.naam": "instellingsnaam", "vervaardiging.plaats": "plaats vervaardiging"})
 print(df)
 
 #######################################################################################################################
 
-# 2. delete kolom/rij
+# 2. delete kolom
 
 df2 = df.drop(["objectnummer", 'instellingsnaam'], 1)
 print(df2)
 
 #######################################################################################################################
 
-# 3. toevoegen kolom/rij
+# 3. toevoegen kolom
 
 df['Test'] = df['objectnummer'] + df['instellingsnaam']
 print(df)
 
 #######################################################################################################################
 
-# 4. verplaats kolom/rij
+# 4. verplaats kolom
 
 df = df[['instellingsnaam', 'objectnummer', 'Test', 'object_categorie', 'objectnaam', 'titel', 'beschrijving',
          'vervaardiger', 'vervaardiger.rol', 'plaats vervaardiging', 'vervaardiging.datum.begin.prec',
