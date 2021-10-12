@@ -52,13 +52,15 @@ print(df)
 
 # 4. verplaats kolom
 
-df = df[['instellingsnaam', 'objectnummer', 'Test', 'object_categorie', 'objectnaam', 'titel', 'beschrijving',
+#df = df[['instellingsnaam', 'objectnummer', 'Test', 'object_categorie', 'objectnaam', 'titel', 'beschrijving',
          'vervaardiger', 'vervaardiger.rol', 'plaats vervaardiging', 'vervaardiging.datum.begin.prec',
          'vervaardiging.datum.begin', 'vervaardiging.datum.eind.prec', 'vervaardiging.datum.eind',
          'associatie.onderwerp', 'associatie.persoon', 'associatie.periode', 'inhoud.onderwerp', 'inhoud.persoon.naam']]
-print(df)
+
 cols = list(df.columns.values)
-print(cols)
+#print(cols)
+#df = df[cols[0:1] + [cols[-1]] + cols[2:19]]
+print(df)
 
 #######################################################################################################################
 
