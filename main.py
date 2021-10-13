@@ -5,7 +5,7 @@
 import pandas as pd
 # pip install pandas in terminal
 
-df = pd.read_csv(r"C:\Users\teugelso\PycharmProjects\pythonProject\TraintheTrainer_03\ttt3.csv", delimiter=';')
+df = pd.read_csv("ttt3.csv", delimiter=';')
 print(df)
 
 # read kolomnamen
@@ -15,13 +15,14 @@ print(df)
 #print(df['objectnaam'][0:5])
 
 # read meerdere kolommen
-#print(df[['objectnaam', 'vervaardiger']])
+#df2 = df[['objectnaam', 'vervaardiger']]
+#print(df2)
 
 # read 1 of meer rij(en)
-#print(df.iloc[1:4])
+#print(df.iloc[0:4])
 
 # read een specifieke locatie
-#print(df.iloc[1,1])
+#print(df.iloc[1:10,0:2])
 
 # om dataframe te bekijken, laat bovenstaande lopen in python console ipv terminal en klik op 'view as dataframe'
 
@@ -38,8 +39,8 @@ print(df)
 
 # 2. delete kolom
 
-df2 = df.drop(["objectnummer", 'instellingsnaam'], 1)
-print(df2)
+df3 = df.drop(['objectnummer', 'instellingsnaam'], 1)
+print(df3)
 
 #######################################################################################################################
 
@@ -53,24 +54,24 @@ print(df)
 # 4. verplaats kolom
 
 #df = df[['instellingsnaam', 'objectnummer', 'Test', 'object_categorie', 'objectnaam', 'titel', 'beschrijving',
-         'vervaardiger', 'vervaardiger.rol', 'plaats vervaardiging', 'vervaardiging.datum.begin.prec',
-         'vervaardiging.datum.begin', 'vervaardiging.datum.eind.prec', 'vervaardiging.datum.eind',
-         'associatie.onderwerp', 'associatie.persoon', 'associatie.periode', 'inhoud.onderwerp', 'inhoud.persoon.naam']]
+         #'vervaardiger', 'vervaardiger.rol', 'plaats vervaardiging', 'vervaardiging.datum.begin.prec',
+         #'vervaardiging.datum.begin', 'vervaardiging.datum.eind.prec', 'vervaardiging.datum.eind',
+         #'associatie.onderwerp', 'associatie.persoon', 'associatie.periode', 'inhoud.onderwerp', 'inhoud.persoon.naam']]
 
 cols = list(df.columns.values)
-#print(cols)
-#df = df[cols[0:1] + [cols[-1]] + cols[2:19]]
+print(cols)
+df = df[cols[0:3] + [cols[-1]] + cols[3:19]]
 print(df)
 
 #######################################################################################################################
 
 # 5. alfabetisch/numeriek sorteren
 
-df = df.sort_values('objectnaam', #ascending=False)
+df = df.sort_values('object_categorie', ascending=False)
 print(df)
 
-#df5 = df.sort_values(['vervaardiger', 'objectnaam'], ascending=[1,0])
-#print(df5)
+#df4 = df.sort_values(['vervaardiger', 'object_categorie'], ascending[1,0])
+#print(df4)
 
 #df6 = df.sort_values('objectnummer')
 #print(df6)
@@ -79,28 +80,28 @@ print(df)
 
 # 6. filteren
 
-df3 = df.loc[df['plaats vervaardiging'] == 'Gent']
-print(df3)
+df5 = df.loc[df['plaats vervaardiging'] == 'Gent']
+print(df5)
 
 #######################################################################################################################
 
 # 7. filteren op meerdere condities
 
-df4 = df.loc[(df['plaats vervaardiging'] == 'Gent') & (df['vervaardiger.rol'] == 'ontwerper')]
-print(df4)
+df6 = df.loc[(df['plaats vervaardiging'] == 'Gent') & (df['vervaardiger.rol'] == 'ontwerper')]
+print(df6)
 
 #######################################################################################################################
 
 # 8. csv opslaan
 
-df4.to_csv('Gentseontwerpers.csv')
+df6.to_csv('Gentseontwerpers.csv')
 
 #######################################################################################################################
 
 # 9. waarden tellen
 
 # 9.1 aantal records
-aantal_records = df["objectnummer"].count()
+aantal_records = df["instellingsnaam"].count()
 print(aantal_records)
 
 #######################################################################################################################
